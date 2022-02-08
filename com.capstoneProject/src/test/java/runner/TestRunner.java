@@ -11,7 +11,7 @@ import utilities.CucumberReportingConfig;
 	@CucumberOptions(
 	features = "classpath:features",
 	glue = "stepDefinitions",
-	tags = "",
+	tags = "@Retail",
 	dryRun = false,
 	strict = true, 
 	monochrome = true,

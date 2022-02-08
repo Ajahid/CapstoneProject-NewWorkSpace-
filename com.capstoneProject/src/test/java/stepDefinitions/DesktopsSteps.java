@@ -79,7 +79,7 @@ public class DesktopsSteps extends Base {
 	       
 	    }
 
-	    @When ("User click  ADD TO CART option on ‘HP LP3065’ item")
+	    @When ("User click ADD TO CART option on ‘HP LP3065’ item")
 	    public void user_click_add_to_cart_option_on_hp_lp3065_item() throws IOException {
 	    	desktop.clickHpLP3065AddToCart();
 			logger.info("User Click on HP LP3065 Add to Cart");
@@ -100,14 +100,14 @@ public class DesktopsSteps extends Base {
 	    	 Utilities.takeScreenShot("ClickAdd to Cart2");
 	    }
 
-	    @When ("User click ADD TO CART option on ‘Canon EOS 5D’ item")
+	    @When ("User click ADD TO CART option on Canon EOS 5D item")
 	    public void user_click_add_to_cart_option_on_canon_eos_5d_item() throws IOException  {
 	    	desktop.clickCanonEOSIAddToCart();
 			logger.info("User click on Canon Add To Cart");
 			Utilities.takeScreenShot("CanonAddToCart");
 	    }
 
-	    @And("^User select color from dropdown ‘Red’$")
+	    @And("User select color from dropdown Red")
 	    public void user_select_color_from_dropdown_red() throws IOException {
 	    	desktop.selectCanonColor();
 			logger.info("User Select RED color");

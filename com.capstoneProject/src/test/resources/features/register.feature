@@ -9,7 +9,7 @@ Scenario: Register with Test Environment Webpage
 		And user click on register button
 		And user fill registeration form with information below
 		|firstname|lastname|email|telephone|password|confirmPassword|
-		|John|Colunga|johncolunga2388@gmail.com|4024443434|johncolunga33399|johncolunga33399|
-		And user click on agree to terms checkbox
+		|John|Colunga|johncolunga7@gmail.com|4024443434|johncolunga7|johncolunga7|
+		#And user click on agree to terms checkbox
 		And user click on continue button
 		  

@@ -176,7 +176,7 @@ public class RetailPageObject extends Base {
 	private WebElement loginPageConfirmation;
 	@FindBy (xpath = "//h2[text()='My Orders']")
 	private WebElement myOrders;
-	@FindBy (xpath = "//a[text()='Register for an affiliate account']")
+	@FindBy (xpath = "//a[starts-with(text(),'Register')]")
 	private WebElement registerAffiliateAccount;
 	@FindBy (xpath = "//input[@id='input-company']")
 	private WebElement companyDetails;
@@ -210,7 +210,7 @@ public class RetailPageObject extends Base {
 	private WebElement accountNumber;
 	@FindBy (xpath = "//input[@value='Continue']")
 	private WebElement continueButtonBankAccountPage;
-	@FindBy (xpath = "//a[text()='Edit your account information']")
+	@FindBy (xpath = "//a[starts-with(text(),'Edit your')]")
 	private WebElement editAccount;
 	@FindBy (xpath = "//input[@id='input-firstname']")
 	private WebElement firstName;
@@ -251,12 +251,12 @@ public class RetailPageObject extends Base {
 	
 	public void enterUserEmail() {
 		
-		userEmail.sendKeys("abdulmajeed@gmail.com");
+		userEmail.sendKeys("johncolunga7@gmail.com");
 	}
 	
 	public void enterUserPassword() {
 		
-		userPassword.sendKeys("Jahid786$");
+		userPassword.sendKeys("johncolunga7");
 	}
 	
 	public void clickLoginButtonOnLoginPage() {
@@ -269,6 +269,8 @@ public class RetailPageObject extends Base {
 			return true;
 		else
 			return false;
+		
+	
 	}
 	
 	public boolean validateAccountLogin() {
@@ -282,7 +284,7 @@ public class RetailPageObject extends Base {
 	public void clickRegisterAffiliateAccount() {
 		
 		registerAffiliateAccount.click();
-		Utilities.highlightelementBorderAndBackground(registerAffiliateAccount);
+		
 		
 	}
 	
@@ -335,6 +337,11 @@ public class RetailPageObject extends Base {
 		editAffiliateAccount.click();
 	}
 	
+	public void clickEditAccount() {
+		
+		editAccount.click();
+	}
+	
 	public void clickBankTransferCheckBox() {
 		
 		bankTransferCheckBox.click();
@@ -372,24 +379,42 @@ public class RetailPageObject extends Base {
 		continueButtonBankAccountPage.click();
 	}
 	
-	public void enterFirstName(String userFirstName) {
+	@SuppressWarnings("unlikely-arg-type")
+	public boolean enterFirstName(String userFirstName) {
 		
-		firstName.sendKeys(userFirstName);
+		if(firstName.equals(userFirstName))
+				return true;
+		else
+			return false;
+			
+		
 	}
 	
-	public void enterlastName(String userLastName) {
+	@SuppressWarnings("unlikely-arg-type")
+	public boolean enterlastName(String userLastName) {
 		
-		lastName.sendKeys(userLastName);
+		if(lastName.equals(userLastName))
+			return true;
+		else
+			return false;
 	}
 	
-	public void enterEmail(String userEmail) {
+	@SuppressWarnings("unlikely-arg-type")
+	public boolean enterEmail(String userEmail) {
 		
-		email.sendKeys(userEmail);
+		if(email.equals(userEmail))
+			return true;
+			else
+				return false;
 	}
 	
-	public void enterTelephone(String UserTelephone) {
+	@SuppressWarnings("unlikely-arg-type")
+	public boolean enterTelephone(String UserTelephone) {
 		
-		telephone.sendKeys(UserTelephone);
+		if(telephone.equals(UserTelephone))
+			return true;
+		else
+			return false;
 	}
 	
 	public boolean verifyEditUserPageSuccessMessage() {

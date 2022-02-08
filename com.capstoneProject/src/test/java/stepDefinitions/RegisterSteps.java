@@ -32,11 +32,12 @@ public class RegisterSteps extends Base{
 		logger.info("User data entered successfully");
 	}
 
+	/*
 	@And("user click on agree to terms checkbox")
 	public void user_click_on_agree_to_terms_checkbox() {
 		registerpage.confirmTermsCheckBox();
 		logger.info("Agree to terms check box selected successfully");
-	}
+	}*/
 
 	@And("user click on continue button")
 	public void user_click_on_continue_button() {

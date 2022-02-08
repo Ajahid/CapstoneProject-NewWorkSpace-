@@ -185,9 +185,17 @@ import core.Base;
 	private WebElement sonyWishListMessage;
 	@FindBy (xpath = "//h2[text()='$2,000.00']")
 	private WebElement macBookProPriceTag;
+	@FindBy (xpath = "//span[@id='cart-total']//text()")
+	private WebElement cartAmount;
 	
 	
-	
+	public boolean verifyCartAmount() {
+		
+		if(cartAmount.isDisplayed())
+			return true;
+		else
+			return false;
+	}
 	
 	public void clicklaptopsNoteBooksOnMainPage() {
 		laptopsNoteBooksbuttonMainPage.click();
@@ -327,6 +335,8 @@ import core.Base;
 				return false;
 		
 	}
+	
+	
 	
 	public void clickCartItems() {
 		

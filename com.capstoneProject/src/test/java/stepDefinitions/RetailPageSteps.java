@@ -22,12 +22,7 @@ public class RetailPageSteps extends Base {
 	RetailPageObject Retail = new RetailPageObject();
 	
 	
-	@Given("^User is on Retail website$")
-	public void  User_is_on_Retail_website() throws IOException {
-		Retail.verifyHomePage();
-		logger.info("User on Retail Website");
-		Utilities.takeScreenShot("Homepage");
-	}
+	
 	
 	@When ("User click on MyAccount")
 	public void user_click_on_myaccount_button() throws IOException {
@@ -60,18 +55,19 @@ public class RetailPageSteps extends Base {
 	}
 	
 	@Then ("User should be logged in to MyAccount dashboard")
-	public void User_should_be_logged_in_to_MyAccount_dashboard() throws IOException {
+	public void User_should_be_logged_in_to_MyAccount_dashboard() throws IOException, InterruptedException {
 		Assert.assertTrue(Retail.validateloginPageConfirmation());
+		Thread.sleep(3000);
 		logger.info("User scucessfully loged in to login page");
 		Utilities.takeScreenShot("UserLoginPage");
 	}
 	
 	
 	@When ("User click on Register for an Affiliate Account link") 
-	public void User_click_on_Register_for_an_Affiliate_Account_link() throws IOException {
+	public void User_click_on_Register_for_an_Affiliate_Account_link() throws InterruptedException {
 		Retail.clickRegisterAffiliateAccount();
-		logger.info("User calick on register Affiliate Account");
-		Utilities.takeScreenShot("ClickAffiliateAccount");
+		Thread.sleep(3000);
+		logger.info("User click on register Affiliate Account");
 		
 	}
 	
@@ -81,8 +77,7 @@ public class RetailPageSteps extends Base {
 		Retail.enterCompanyDetails(data.get(0).get("company"));
 		Retail.enterwebsiteDetails(data.get(0).get("website"));
 		Retail.entertaxIdDetails(data.get(0).get("taxID"));
-		Retail.clickChequeCheckBox();
-		Retail.enterChequePayeeName(data.get(0).get("chequePayeeName"));
+		Retail.enterChequePayeeName(data.get(0).get("paymentMethod"));
 		logger.info("User data entered successfully");
 		
 	}
@@ -110,7 +105,7 @@ public class RetailPageSteps extends Base {
 		
 	}
 	
-	@When ("User click on ‘Edit your affiliate information link")
+	@When ("User click on Edit your affiliate information link")
 	public void User_click_on_Edit_your_affiliate_information_link() {
 		Retail.clickEditAffiliateAccount();
 		logger.info("User click on Edit Affiliate Account");
@@ -137,9 +132,10 @@ public class RetailPageSteps extends Base {
 		
 	}
 	
-	@When ("User click on ‘Edit your account information’ link") 
-	public void User_click_on_Edit_your_account_information_link() {
-		Retail.clickContinueButtonBankAccountPage();
+	@When ("User click on Edit your account information link") 
+	public void User_click_on_Edit_your_account_information_link() throws InterruptedException {
+		Thread.sleep(3000);
+		Retail.clickEditAccount();
 		
 		
 	}
@@ -147,16 +143,16 @@ public class RetailPageSteps extends Base {
 	@And ("User modify below information")
 	public void User_modify_below_information(DataTable dataTable) {
 		List<Map<String, String>> data2 = dataTable.asMaps(String.class, String.class);
-		Retail.enterFirstName(data2.get(0).get("abdul"));
-		Retail.enterlastName(data2.get(0).get("majeed"));
-		Retail.enterEmail(data2.get(0).get("abdulmajeed1@gmail.com"));
-		Retail.enterTelephone(data2.get(0).get("571-599-2178"));
+		Retail.enterFirstName(data2.get(0).get("firstname"));
+		Retail.enterlastName(data2.get(0).get("lastName"));
+		Retail.enterEmail(data2.get(0).get("email"));
+		Retail.enterTelephone(data2.get(0).get("telephone"));
 		logger.info("User modify account information");
 		
 	}
 	
 	
-	@Then ("User should see a message ‘Success: Your account has been successfully updated.’")
+	@Then ("User should see a message Success: Your account has been successfully updated")
 	public void User_should_see_a_message_Success_Your_account_has_been_successfully_updated() throws IOException {
 		Assert.assertTrue(Retail.verifyEditUserPageSuccessMessage());
 		logger.info("User See Message Your account has been successfully updated");

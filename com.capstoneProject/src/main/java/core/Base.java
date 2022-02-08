@@ -22,8 +22,8 @@ public class Base {
 	public static WebDriver driver;
 	public static Properties properties;
 	public static Logger logger;
-	private String propertyPath = ".\\src\\test\\resources\\input\\log4j.properties";
-	private String log4jPath = ".\\src\\test\\resources\\input\\log4j.properties";
+	private String propertyPath = "C:\\Users\\jahid\\git\\repository13\\com.capstoneProject\\src\\test\\resources\\input\\properties.properties";
+	private String log4jPath = "C:\\Users\\jahid\\git\\repository13\\com.capstoneProject\\src\\test\\resources\\input\\log4j.properties";
 	
 	@SuppressWarnings("static-access")
 	public Base() {

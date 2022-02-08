@@ -27,7 +27,7 @@ public class Utilities extends Base{
 
 	public static void takeScreenShot(String fileName) throws IOException {
 		
-		String path = "C:\\CapstoneProject\\com.capstoneProject\\screenShots";
+		String path = "C:\\Users\\jahid\\git\\repository13\\com.capstoneProject\\output\\screenShots";
 		
 		File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		
